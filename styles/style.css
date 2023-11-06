@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:wght@400;600&display=swap');
+/* Um atalho que pode facilitar muito o processo de alterar as cores em todo o código para atribuir em seu lugar a variável é o ctrl + D. Basta selecionar o que deseja mudar com o mouse e em seguida clicar em ctrl + D até que todos os valores que você deseja alterar estejam selecionados. */
+
+/* CRIANDO VARIÉVEL EM CSS
+PRIMEIRO, PARA PESQUISAR QUANTAS VEZES USEI UMA COR NO CÓDIGO, POR EXEMPLO O BRANCO: USO Ctrl + f, então pesquiso f6f6f6. Vai ser mostrado quantas vezes usei essa cor.
+
+VARIÁVEL ESCOPO GLOBAL: USO A PSEUDOCLASSE :root {
+   --cor-primaria: #000000;
+   --cor-secundaria: #f6f6f6;
+   --cor-terciaria: #22d4fd;
+
+
+
+
+*/
+:root {
+   --cor-primaria: #000000;
+   --cor-secundaria: #f6f6f6;
+   --cor-terciaria: #22d4fd;
+   --cor-hover: #272727;
+
+   --fonte-primaria: 'Krona One', sans-serif;
+   --fonte-secundaria: 'Montserrat', sans-serif;
+}
+
+* {
+   /* com o asteristico, é possivel selecionar todos os elementos da página*/
+   margin: 0;
+   padding: 0;
+
+}
+
+body {
+   /* height: 100vh;  retirei após adicionar o footer
+   para poder alcançar todo o conteudo */
+   /* altura de 100% do viewport */
+   box-sizing: border-box;
+   /* garantir que o elemento filho permaneça dentro do pai */
+   background-color: var(--cor-primaria);
+   /* usando as variavéis */
+   color: var(--cor-secundaria);
+   /* COR DO TEXTO */
+}
+
+.cabecalho {
+   padding: 2% 0 0 15%;
+   /* 1º preenchimento superior
+      2ª preenchimento direito
+      3º preenchimento inferior
+      4º preenchimento esquerdo
+       */
+}
+
+.cabecalho__menu {
+   display: flex;
+   gap: 80px;
+}
+
+.cabecalho__menu__link {
+   font-family: var(--fonte-secundaria);
+   font-size: 1.5rem;
+   /*equivale a 24px; */
+   font-weight: 600;
+   color: var(--cor-terciaria);
+   text-decoration: none;
+   /* remover decoração do texto, nesse caso seria a linha em baixo dos links */
+
+}
+
+
+
+.apresentacao {
+   padding: 5% 15%;
+   /* 1º vertical 2 º horizontal */
+   display: flex;
+   /* deixar o conteudo em horizontal */
+   align-items: center;
+   /* levar o conteudo para o centro*/
+   justify-content: space-between;
+   /*  separar a section da imagem*/
+   gap: 82px;
+}
+
+.apresentacao__conteudo {
+   width: 50%;
+   display: flex;
+   flex-direction: column;
+   gap: 40px;
+   /* espaçamento do conteudo */
+
+}
+
+.apresentacao__conteudo__titulo {
+   font-size: 2.25rem;
+   /* Equivale a 36px; */
+   /* alterar tamanho do titulo h1 */
+   font-family: var(--fonte-primaria);
+   /*  utilizando a fonte importada*/
+}
+
+.titulo-destaque {
+   color: var(--cor-terciaria)
+}
+
+.apresentacao__conteudo__texto {
+   font-size: 1.5rem;
+   font-family: var(--fonte-secundaria);
+}
+
+
+.apresentacao__links {
+   display: flex;
+   flex-direction: column;
+   /* usando o flex-direction: para manter os itens em coluna */
+   align-items: center;
+   /* após o flex-direction, o align vai centralizar os itens na vertical*/
+   justify-content: space-between;
+   /* deixas os botoes separados */
+   gap: 32px;
+   /* espaço entre os links e o h2*/
+}
+
+.apresentacao__links__subtitulo {
+   font-family: var(--fonte-primaria);
+   font-weight: 400;
+   font-size: 1.5rem;
+}
+
+.apresentacao__links__navegacao {
+   display: flex;
+   /*para alinhar os icones das redes sociais ao lado do respectivo nome*/
+   justify-content: center;
+   /* alinhar o conteúdo do botão no centro */
+   gap: 16px;
+   /* espaço entre o icone e o texto */
+   border: 2px solid var(--cor-terciaria);
+   width: 50%;
+   text-align: center;
+   border-radius: 8px;
+   font-size: 1.5rem;
+   font-weight: 600;
+   padding: 21.5px 0;
+   /* o primeiro valor e do eixo vertical, o segundo horizontal */
+   text-decoration: none;
+   /*retirar a sublinhação do texto */
+   color: var(--cor-secundaria);
+   /* cor do texto*/
+   font-family: var(--fonte-secundaria);
+   
+
+}
+
+.apresentacao__links__navegacao:hover {
+   /* repeti a classe .apresentacao__links__link, acrescentando 
+o :hover, para dar um efeito vizual assim que o mouse passar por 
+cima dos elementos ancora <a> (botões). */
+   background-color: var(--cor-hover);
+   /* padding: 3%; */
+   /*efeito de saltar (animação) */
+}
+
+.apresentacao__imagem {
+   width: 50%;
+   /* responsividade da imagem */
+}
+
+.rodape {
+   color: var(--cor-primaria);
+   background-color: var(--cor-terciaria);
+   padding: 24px;
+   /* preencher o contúdo */
+   text-align: center;
+   /*alinhar o texto */
+   font-family: var(--fonte-secundaria);
+   font-size: 1.5rem;
+   /* tamanho da fonte */
+   font-weight: 400;
+   /* peso da fonte */
+}
+
+
+.apresentacao__conteudo__texto a {
+   /* adicionado ao curriculo */
+   text-decoration: none;
+   color: var(--cor-terciaria);
+}
+
+/* @media uma função para definir diferentes tipos de tela
+no caso abaixo, ao declarar o tamanho maximo da tela, sera aplicada uma mudança na .apresentacao
+
+*/
+@media (max-width: 1200px) {
+   .cabecalho {
+      padding: 10%;
+   }
+
+   .cabecalho__menu {
+      justify-content: center;
+   }
+
+   .apresentacao {
+      flex-direction: column-reverse;
+      padding: 5%;
+   }
+   .apresentacao__conteudo{
+      width: auto;
+
+   }
+
+}
